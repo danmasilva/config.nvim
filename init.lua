@@ -69,6 +69,19 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
+  -- copilot
+  'github/copilot.vim',
+
+  --comment
+  'terrortylor/nvim-comment',
+
+  -- conquer of completion
+  -- need to run 'npm ci ~/.local/share/nvim/lazy/coc.nvim' for now
+  {
+   'neoclide/coc.nvim',
+   build = "npm ci"
+  },
+
   -- nvim-tree
   'nvim-tree/nvim-tree.lua',
   'nvim-tree/nvim-web-devicons',
