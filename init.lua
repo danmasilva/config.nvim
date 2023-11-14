@@ -197,7 +197,8 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = 'unnamed'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -266,6 +267,8 @@ require("nvim-tree").setup({
 
 --personal keymaps
 vim.keymap.set('n', '<leader>0', ":NvimTreeToggle<cr>", {desc = 'Toggle NvimTree'})
+vim.api.nvim_set_keymap('n', '<leader>t', ':ToggleTerm<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<esc><esc>', '<C-\\><C-n>:ToggleTerm<CR>', { noremap = true, silent = true })
 
 
 -- [[ Configure Telescope ]]
