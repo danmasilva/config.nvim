@@ -264,6 +264,7 @@ require("nvim-tree").setup({
   },
 })
 
+--personal keymaps
 vim.keymap.set('n', '<leader>0', ":NvimTreeToggle<cr>", {desc = 'Toggle NvimTree'})
 
 
@@ -478,12 +479,14 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  gopls = {},
+  pyright = {},
+  terraformls = {
+    filetypes = { 'terraform', 'tf', 'tfvars'},
+    args = { 'serve' },
+    command = 'terraform-ls',
+
+  },
 
   lua_ls = {
     Lua = {
